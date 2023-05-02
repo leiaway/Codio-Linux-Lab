@@ -1,0 +1,29 @@
+#include<iostream>
+
+using namespace std;
+
+ int x, shift;
+ string msg,final_msg; 
+
+
+int main(){
+    cout<<"Enter an int for the messsage shift"<<endl;
+    cin>>shift;
+    while (cin.fail())
+    {
+      cout <<"Remember to enter a number."<< endl;
+      cin.clear();
+      cin.ignore(256,'\n');
+      cin>>shift;
+    }
+    
+    cout<<"Enter your message to be encrypted"<< endl;
+    cin>>msg;
+    cout<< msg <<endl;
+    cout << msg.size()<<endl;
+    for(x=0;x<msg.size();x++){
+        final_msg+=(msg[x]-'A'+shift)%26+'A';
+    }
+    cout<<final_msg<<endl;
+    return 0;
+}
